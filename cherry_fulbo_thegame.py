@@ -2,25 +2,18 @@ import random
 import time
 
 class Jugador:
-    def __init__(self, nombre, ataque, defensa, media):
+    def __init__(self, nombre):
         self.nombre = nombre
-        self.ataque = ataque
-        self.defensa = defensa
-        self.media = media
+        self.ataque = random.randint(1, 100)
+        self.defensa = random.randint(1, 100)
+        self.media = random.randint(1, 100)
 
     def __str__(self):
         return f"{self.nombre} | Ataque: {self.ataque}, Defensa: {self.defensa}, Media: {self.media}"
 
-#Función para crear jugadores
-def generar_jugador(nombre):
-    ataque = random.randint(1, 100)
-    defensa = random.randint(1, 100)
-    media = random.randint(1, 100)
-    return Jugador(nombre, ataque, defensa, media)
-
 #Equipos de jugadores
-equipo1 = [generar_jugador("BLOCK ERNST"), generar_jugador("ORDOÑEZ"), generar_jugador("STESSENS"), generar_jugador("GIORDANA"), generar_jugador("PAVÓN")]
-equipo2 = [generar_jugador("thunder_1"), generar_jugador("thunder_2"), generar_jugador("thunder_3"), generar_jugador("thunder_4"), generar_jugador("thunder_5")]
+equipo1 = [Jugador("BLOCK ERNST"), Jugador("ORDOÑEZ"), Jugador("STESSENS"), Jugador("GIORDANA"), Jugador("PAVÓN")]
+equipo2 = [Jugador("thunder_1"), Jugador("thunder_2"), Jugador("thunder_3"), Jugador("thunder_4"), Jugador("thunder_5")]
 
 #Simular el partido
 def simular_partido(equipo1, equipo2):
